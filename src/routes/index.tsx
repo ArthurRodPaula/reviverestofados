@@ -19,14 +19,14 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 
-import logoReviver from "@/assets/logo-reviver.png.asset.json";
-import trabalhoCadeira from "@/assets/trabalho-cadeira.jpg.asset.json";
-import trabalhoBanquetaFrente from "@/assets/trabalho-banqueta-frente.jpg.asset.json";
-import trabalhoBanquetaCima from "@/assets/trabalho-banqueta-cima.jpg.asset.json";
-import trabalhoBanquetaOficina from "@/assets/trabalho-banqueta-oficina.jpg.asset.json";
-import trabalhoSofa from "@/assets/trabalho-sofa.jpg.asset.json";
-import trabalhoPoltronaCouro from "@/assets/trabalho-poltrona-couro.jpg.asset.json";
-import trabalhoPoltronaPufe from "@/assets/trabalho-poltrona-pufe.jpg.asset.json";
+import logoReviver from "@/assets/logo-reviver.jpg";
+import trabalhoCadeira from "@/assets/trabalho-cadeira.jpg";
+import trabalhoBanquetaFrente from "@/assets/trabalho-banqueta-frente.jpg";
+import trabalhoBanquetaCima from "@/assets/trabalho-banqueta-cima.jpg";
+import trabalhoBanquetaOficina from "@/assets/trabalho-banqueta-oficina.jpg";
+import trabalhoSofa from "@/assets/trabalho-sofa.jpg";
+import trabalhoPoltronaCouro from "@/assets/trabalho-poltrona-couro.jpg";
+import trabalhoPoltronaPufe from "@/assets/trabalho-poltrona-pufe.jpg";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -83,32 +83,32 @@ const SERVICOS = [
 
 const TRABALHOS = [
   {
-    src: trabalhoCadeira.url,
+    src: trabalhoCadeira,
     alt: "Cadeira de madeira estofada com tecido jacquard vinho com estampas de letras",
     legenda: "Cadeira com tecido jacquard",
   },
   {
-    src: trabalhoBanquetaFrente.url,
+    src: trabalhoBanquetaFrente,
     alt: "Banqueta antiga restaurada com tecido floral cinza e branco, pernas de madeira envernizadas",
     legenda: "Banqueta antiga restaurada",
   },
   {
-    src: trabalhoBanquetaCima.url,
+    src: trabalhoBanquetaCima,
     alt: "Banqueta vista de cima com tecido floral cinza e acabamento caprichado",
     legenda: "Detalhe do acabamento",
   },
   {
-    src: trabalhoBanquetaOficina.url,
+    src: trabalhoBanquetaOficina,
     alt: "Banqueta finalizada no ateliê, com espuma nova e pernas de madeira curvadas",
     legenda: "No ateliê da Reviver",
   },
   {
-    src: trabalhoPoltronaCouro.url,
+    src: trabalhoPoltronaCouro,
     alt: "Poltrona em couro cinza com detalhes de madeira e base giratória, restaurada",
     legenda: "Poltrona em couro",
   },
   {
-    src: trabalhoPoltronaPufe.url,
+    src: trabalhoPoltronaPufe,
     alt: "Poltrona em couro cinza com pufe e almofadas estampadas na sala",
     legenda: "Poltrona com pufe",
   },
@@ -241,7 +241,7 @@ function Index() {
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
           <a href="#" className="flex items-center gap-3">
             <img
-              src={logoReviver.url}
+              src={logoReviver}
               alt="Reviver Estofados"
               className="h-10 w-auto"
             />
@@ -316,7 +316,7 @@ function Index() {
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-2xl shadow-foreground/10">
               <img
-                src={trabalhoSofa.url}
+                src={trabalhoSofa}
                 alt="Sofá de canto grande com tecido cinza claro e capitonê, em sala com tapete persa"
                 className="aspect-[4/3] w-full object-cover sm:aspect-[16/10] lg:aspect-[4/3]"
               />
@@ -473,7 +473,7 @@ function Index() {
       <footer className="border-t border-border bg-foreground py-10 text-background/80">
         <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-4 text-center sm:px-6">
           <img
-            src={logoReviver.url}
+            src={logoReviver}
             alt="Reviver Estofados"
             className="h-12 w-auto rounded-lg bg-background p-2"
           />
