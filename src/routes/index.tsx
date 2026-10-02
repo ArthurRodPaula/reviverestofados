@@ -114,30 +114,29 @@ const TRABALHOS = [
   },
 ];
 
-// TODO: Separe as imagens corretamente entre cadeiras/poltronas e sofás
 const FOTOS_CADEIRAS = [
-  "/estofados/20151218_185951.jpg",
-  "/estofados/20161015_100859.jpg",
-  "/estofados/20161015_100921.jpg",
-  "/estofados/FB_IMG_1460647529297.jpg",
-  "/estofados/FB_IMG_1460647665437.jpg",
-  "/estofados/FB_IMG_1460647678528.jpg",
-  "/estofados/FB_IMG_1460647698021.jpg",
-  "/estofados/IMG-20160809-WA0007.jpg",
-  "/estofados/IMG-20161009-WA0014.jpg",
+  "/estofados/poltronas-cadeiras/20151218_185951.jpg",
+  "/estofados/poltronas-cadeiras/20161015_100859.jpg",
+  "/estofados/poltronas-cadeiras/FB_IMG_1460647665437.jpg",
+  "/estofados/poltronas-cadeiras/FB_IMG_1460647678528.jpg",
+  "/estofados/poltronas-cadeiras/IMG-20161009-WA0014.jpg",
+  "/estofados/poltronas-cadeiras/IMG-20180707-WA0014.jpg",
+  "/estofados/poltronas-cadeiras/IMG-20180715-WA0005.jpg",
+  "/estofados/poltronas-cadeiras/WhatsApp Image 2026-09-30 at 22.36.51.jpeg",
 ];
 
 const FOTOS_SOFAS = [
-  "/estofados/IMG-20161021-WA0040.jpeg",
-  "/estofados/IMG-20161123-WA0057.jpg",
-  "/estofados/IMG-20170320-WA0032.jpg",
-  "/estofados/IMG-20180707-WA0014.jpg",
-  "/estofados/IMG-20180715-WA0005.jpg",
-  "/estofados/IMG-20190903-WA0013.jpg",
-  "/estofados/IMG-20190917-WA0002.jpg",
-  "/estofados/IMG-20191105-WA0004.jpg",
-  "/estofados/IMG-20191125-WA0007.jpg",
-  "/estofados/WhatsApp Image 2026-09-30 at 22.36.51.jpeg",
+  "/estofados/sofas/20161015_100921.jpg",
+  "/estofados/sofas/FB_IMG_1460647529297.jpg",
+  "/estofados/sofas/FB_IMG_1460647698021.jpg",
+  "/estofados/sofas/IMG-20160809-WA0007.jpg",
+  "/estofados/sofas/IMG-20161021-WA0040.jpeg",
+  "/estofados/sofas/IMG-20161123-WA0057.jpg",
+  "/estofados/sofas/IMG-20170320-WA0032.jpg",
+  "/estofados/sofas/IMG-20190903-WA0013.jpg",
+  "/estofados/sofas/IMG-20190917-WA0002.jpg",
+  "/estofados/sofas/IMG-20191105-WA0004.jpg",
+  "/estofados/sofas/IMG-20191125-WA0007.jpg",
 ];
 
 function WhatsAppBotao({
