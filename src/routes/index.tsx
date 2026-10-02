@@ -114,6 +114,32 @@ const TRABALHOS = [
   },
 ];
 
+// TODO: Separe as imagens corretamente entre cadeiras/poltronas e sofás
+const FOTOS_CADEIRAS = [
+  "/estofados/20151218_185951.jpg",
+  "/estofados/20161015_100859.jpg",
+  "/estofados/20161015_100921.jpg",
+  "/estofados/FB_IMG_1460647529297.jpg",
+  "/estofados/FB_IMG_1460647665437.jpg",
+  "/estofados/FB_IMG_1460647678528.jpg",
+  "/estofados/FB_IMG_1460647698021.jpg",
+  "/estofados/IMG-20160809-WA0007.jpg",
+  "/estofados/IMG-20161009-WA0014.jpg",
+];
+
+const FOTOS_SOFAS = [
+  "/estofados/IMG-20161021-WA0040.jpeg",
+  "/estofados/IMG-20161123-WA0057.jpg",
+  "/estofados/IMG-20170320-WA0032.jpg",
+  "/estofados/IMG-20180707-WA0014.jpg",
+  "/estofados/IMG-20180715-WA0005.jpg",
+  "/estofados/IMG-20190903-WA0013.jpg",
+  "/estofados/IMG-20190917-WA0002.jpg",
+  "/estofados/IMG-20191105-WA0004.jpg",
+  "/estofados/IMG-20191125-WA0007.jpg",
+  "/estofados/WhatsApp Image 2026-09-30 at 22.36.51.jpeg",
+];
+
 function WhatsAppBotao({
   className = "",
   children,
@@ -233,6 +259,81 @@ function TrabalhosCarousel() {
   );
 }
 
+function GaleriaCarousel({ fotos }: { fotos: string[] }) {
+  const [api, setApi] = useState<CarouselApi>();
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (!api) return;
+    const update = () => setCurrent(api.selectedScrollSnap());
+    update();
+    api.on("select", update);
+    return () => {
+      api.off("select", update);
+    };
+  }, [api]);
+
+  return (
+    <div className="relative mt-8">
+      <Carousel
+        setApi={setApi}
+        opts={{ loop: true, align: "start" }}
+        plugins={[
+          Autoplay({
+            delay: 4500,
+            stopOnInteraction: true,
+            stopOnMouseEnter: true,
+          }),
+        ]}
+      >
+        <CarouselContent className="-ml-5">
+          {fotos.map((src, i) => (
+            <CarouselItem
+              key={i}
+              className="basis-full pl-5 sm:basis-1/2 lg:basis-1/3"
+            >
+              <figure className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
+                <div className="relative aspect-[4/3] sm:aspect-[16/10]">
+                  <img
+                    src={src}
+                    alt="Foto da galeria"
+                    className="absolute inset-0 h-full w-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </figure>
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+        <CarouselPrevious
+          aria-label="Foto anterior"
+          className="left-2 h-10 w-10 rounded-full border-border bg-card/90 shadow-md hover:bg-card"
+        />
+        <CarouselNext
+          aria-label="Próxima foto"
+          className="right-2 h-10 w-10 rounded-full border-border bg-card/90 shadow-md hover:bg-card"
+        />
+      </Carousel>
+      <div className="mt-6 flex flex-wrap justify-center gap-2">
+        {fotos.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            aria-label={`Ir para a foto ${i + 1}`}
+            onClick={() => api?.scrollTo(i)}
+            className={
+              "h-2.5 rounded-full transition-all " +
+              (current === i
+                ? "w-6 bg-primary"
+                : "w-2.5 bg-foreground/20 hover:bg-foreground/30")
+            }
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background text-foreground">
@@ -252,6 +353,9 @@ function Index() {
             </a>
             <a href="#trabalhos" className="transition-colors hover:text-foreground">
               Trabalhos
+            </a>
+            <a href="#galeria" className="transition-colors hover:text-foreground">
+              Galeria
             </a>
             <a href="#sobre" className="transition-colors hover:text-foreground">
               Sobre
@@ -380,6 +484,26 @@ function Index() {
             Tem um móvel parecido? Mande uma foto pelo WhatsApp que a gente avalia a
             reforma.
           </p>
+        </div>
+      </section>
+
+      {/* Galeria */}
+      <section id="galeria" className="scroll-mt-20 bg-cream py-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6">
+          <SectionTitulo
+            eyebrow="Nossa Galeria"
+            titulo="Cadeiras, Poltronas e Sofás"
+          />
+          
+          <div className="mt-16">
+            <h3 className="font-display text-2xl font-semibold text-foreground text-center">Cadeiras e Poltronas</h3>
+            <GaleriaCarousel fotos={FOTOS_CADEIRAS} />
+          </div>
+
+          <div className="mt-20">
+            <h3 className="font-display text-2xl font-semibold text-foreground text-center">Sofás</h3>
+            <GaleriaCarousel fotos={FOTOS_SOFAS} />
+          </div>
         </div>
       </section>
 
