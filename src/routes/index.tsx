@@ -214,12 +214,18 @@ function TrabalhosCarousel() {
               key={trabalho.legenda}
               className="basis-full pl-5 sm:basis-1/2 lg:basis-1/3"
             >
-              <figure className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
-                <div className="relative aspect-[4/3] bg-muted/20 sm:aspect-[16/10]">
+              <figure className="overflow-hidden rounded-3xl border border-border shadow-sm">
+                <div className="relative flex aspect-[4/3] items-center justify-center bg-black/5 sm:aspect-[16/10]">
+                  <img
+                    src={trabalho.src}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover opacity-40 blur-xl scale-125 saturate-150"
+                    aria-hidden="true"
+                  />
                   <img
                     src={trabalho.src}
                     alt={trabalho.alt}
-                    className="absolute inset-0 h-full w-full object-contain p-2"
+                    className="absolute inset-0 h-full w-full object-contain p-2 drop-shadow-xl"
                   />
                 </div>
                 <figcaption className="px-4 py-3 text-sm font-medium text-muted-foreground">
@@ -291,12 +297,18 @@ function GaleriaCarousel({ fotos }: { fotos: string[] }) {
               key={i}
               className="basis-full pl-5 sm:basis-1/2 lg:basis-1/3"
             >
-              <figure className="overflow-hidden rounded-3xl border border-border bg-card shadow-sm">
-                <div className="relative aspect-[4/3] bg-muted/20 sm:aspect-[16/10]">
+              <figure className="overflow-hidden rounded-3xl border border-border shadow-sm">
+                <div className="relative flex aspect-[4/3] items-center justify-center bg-black/5 sm:aspect-[16/10]">
+                  <img
+                    src={src}
+                    alt=""
+                    className="absolute inset-0 h-full w-full object-cover opacity-40 blur-xl scale-125 saturate-150"
+                    aria-hidden="true"
+                  />
                   <img
                     src={src}
                     alt="Foto da galeria"
-                    className="absolute inset-0 h-full w-full object-contain p-2"
+                    className="absolute inset-0 h-full w-full object-contain p-2 drop-shadow-xl"
                     loading="lazy"
                   />
                 </div>
@@ -417,12 +429,20 @@ function Index() {
             </ul>
           </div>
           <div className="relative">
-            <div className="overflow-hidden rounded-3xl border border-border bg-muted/20 shadow-2xl shadow-foreground/10">
-              <img
-                src="/estofados/sofas/IMG-20191105-WA0004.jpg"
-                alt="Sofá de canto grande com tecido cinza claro e capitonê, em sala com tapete persa"
-                className="aspect-[4/3] w-full object-contain p-2 sm:aspect-[16/10] lg:aspect-[4/3]"
-              />
+            <div className="overflow-hidden rounded-3xl border border-border bg-black/5 shadow-2xl shadow-foreground/10">
+              <div className="relative flex aspect-[4/3] w-full items-center justify-center sm:aspect-[16/10] lg:aspect-[4/3]">
+                <img
+                  src="/estofados/sofas/IMG-20191105-WA0004.jpg"
+                  alt=""
+                  className="absolute inset-0 h-full w-full object-cover opacity-40 blur-2xl scale-125 saturate-150"
+                  aria-hidden="true"
+                />
+                <img
+                  src="/estofados/sofas/IMG-20191105-WA0004.jpg"
+                  alt="Sofá de canto grande com tecido cinza claro e capitonê, em sala com tapete persa"
+                  className="absolute inset-0 h-full w-full object-contain p-2 drop-shadow-2xl"
+                />
+              </div>
             </div>
             <div className="absolute -bottom-5 -left-5 hidden rounded-2xl border border-border bg-card px-5 py-4 shadow-xl sm:block">
               <p className="font-display text-lg font-semibold text-foreground">
