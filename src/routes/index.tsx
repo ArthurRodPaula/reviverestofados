@@ -93,12 +93,12 @@ const TRABALHOS = [
     legenda: "Banqueta antiga restaurada",
   },
   {
-    src: trabalhoBanquetaCima,
+    src: "/estofados/sofas/IMG-20191125-WA0007.jpg",
     alt: "Banqueta vista de cima com tecido floral cinza e acabamento caprichado",
     legenda: "Detalhe do acabamento",
   },
   {
-    src: trabalhoBanquetaOficina,
+    src: "/estofados/poltronas-cadeiras/IMG-20161009-WA0014.jpg",
     alt: "Banqueta finalizada no ateliê, com espuma nova e pernas de madeira curvadas",
     legenda: "No ateliê da Reviver",
   },
@@ -108,7 +108,7 @@ const TRABALHOS = [
     legenda: "Poltrona em couro",
   },
   {
-    src: trabalhoPoltronaPufe,
+    src: "/estofados/poltronas-cadeiras/20161015_100859.jpg",
     alt: "Poltrona em couro cinza com pufe e almofadas estampadas na sala",
     legenda: "Poltrona com pufe",
   },
@@ -419,7 +419,7 @@ function Index() {
           <div className="relative">
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-2xl shadow-foreground/10">
               <img
-                src={trabalhoSofa}
+                src="/estofados/sofas/IMG-20191105-WA0004.jpg"
                 alt="Sofá de canto grande com tecido cinza claro e capitonê, em sala com tapete persa"
                 className="aspect-[4/3] w-full object-cover sm:aspect-[16/10] lg:aspect-[4/3]"
               />
